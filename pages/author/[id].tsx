@@ -1,4 +1,4 @@
-import Author from "../../components/Stories/Author/Author";
+import Author from "../../components/Author/Author";
 import { Auth } from "../../types";
 
 const AuthorInfo = ({ author }: { author: Auth }) => {
