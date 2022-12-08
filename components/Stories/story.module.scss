@@ -1,8 +1,7 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
-  
+  width: 100%;
+  margin: 2rem 0;
+
   .cart {
     background-color: rgba(245, 245, 245, 0.396);
     border: 0.2px solid #141414;
