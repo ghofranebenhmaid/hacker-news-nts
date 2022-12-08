@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  
+  .cart {
+    background-color: rgba(245, 245, 245, 0.396);
+    border: 0.2px solid #141414;
+    border-radius: 10px;
+    padding: 1.4rem;
+
+    &__date {
+      background-color: #5f77e0;
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    &__title {
+      margin-top: 1.2rem;
+    }
+    &__author,
+    &__score {
+      font-size: 0.9rem;
+      color: #212121;
+    }
+  }
+}
