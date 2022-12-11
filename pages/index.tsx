@@ -12,6 +12,13 @@ const Home: NextPage<{ stories: HackerNewsStory[] }> = ({ stories }) => {
         <meta name="description" content="Hacker News Stories" />
       </Head>
       <main>
+        <div className="text">
+          <h1 className="title">Hacker News stories</h1>
+          <h1 className="description">
+            Displays 10 random Hacker News stories, listed in ascending order
+            based on the stories scores.
+          </h1>
+        </div>
         <StoryList stories={stories} />
       </main>
     </Fragment>
