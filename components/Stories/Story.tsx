@@ -3,7 +3,7 @@ import { getDateSincePost } from "../../helpers/date-format";
 import styles from "./story.module.scss";
 const Story = (props: any) => {
   return (
-    <div className={styles.grid}>
+    <li className={styles.grid}>
       <div className={styles.cart}>
         <span className={styles["cart__date"]}>
           {" "}
@@ -27,7 +27,7 @@ const Story = (props: any) => {
           <span className={styles["cart__author"]}>{props.by}</span>
         </Link>
       </div>
-    </div>
+    </li>
   );
 };
 

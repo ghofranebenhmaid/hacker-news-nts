@@ -7,7 +7,7 @@ const StoryList = (props: any) => {
     return <p className="center">No stories found!!</p>;
   }
   return (
-    <div className={styles.grid}>
+    <ol>
       {props.stories?.map((story: any, index: number) => (
         <Story
           key={index}
@@ -18,7 +18,7 @@ const StoryList = (props: any) => {
           time={story.time}
         />
       ))}
-    </div>
+    </ol>
   );
 };
 
