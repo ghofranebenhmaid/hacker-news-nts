@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { getDateSincePost } from "../../helpers/date-format";
 import styles from "./story.module.scss";
 const Story = (props: any) => {
-  // const dateStart = new Date(+props.time * 1000).toLocaleString("dk-DK");
   return (
     <div className={styles.grid}>
       <div className={styles.cart}>
-        <span className={styles["cart__date"]}> {props.time} </span>
+        <span className={styles["cart__date"]}>
+          {" "}
+          {getDateSincePost(props.time)}
+        </span>
         <h3 className={styles["cart__title"]}>
           <a
             className={styles["cursor-pointer text-3xl"]}
@@ -16,9 +19,12 @@ const Story = (props: any) => {
             {props.title}
           </a>
         </h3>
-        <span className={styles["cart__score"]}>{props.score} points</span>
+        <span className={styles["cart__score"]}>
+          {props.score} {props.score > 1 ? "points " : "point "}
+          <span>by </span>
+        </span>
         <Link href={`/author/${props.by}`}>
-          <span className={styles["cart__author"]}> by {props.by}</span>
+          <span className={styles["cart__author"]}>{props.by}</span>
         </Link>
       </div>
     </div>

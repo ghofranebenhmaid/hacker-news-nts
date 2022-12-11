@@ -1,11 +1,17 @@
+import Head from "next/head";
+import { Fragment } from "react";
 import Author from "../../components/Author/Author";
 import { Auth } from "../../types";
 
 const AuthorInfo = ({ author }: { author: Auth }) => {
   return (
-    <div>
-      <Author id={author.id} karma={author.karma}/>
-    </div>
+    <Fragment>
+      <Head>
+        <title>{author.id}</title>
+        <meta name="description" content={author.id} />
+      </Head>
+      <Author id={author.id} karma={author.karma} />
+    </Fragment>
   );
 };
 
@@ -38,7 +44,6 @@ export const getStaticProps = async ({
 }: {
   params: { id: string };
 }) => {
-  // Fetch the list of top stories
   const res = await fetch(
     `https://hacker-news.firebaseio.com/v0/user/${params.id}.json`
   );

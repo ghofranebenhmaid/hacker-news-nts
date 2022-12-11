@@ -1,7 +1,22 @@
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { Fragment } from "react";
 import StoryList from "../components/Stories/StoryList";
 import { HackerNewsStory } from "../types";
+
+const Home: NextPage<{ stories: HackerNewsStory[] }> = ({ stories }) => {
+  return (
+    <Fragment>
+      <Head>
+        <title>Hacker News Stories</title>
+        <meta name="description" content="Hacker News Stories" />
+      </Head>
+      <main>
+        <StoryList stories={stories} />
+      </main>
+    </Fragment>
+  );
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   // Fetch the list of top stories
@@ -35,13 +50,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-const Home: NextPage<{ stories: HackerNewsStory[] }> = ({ stories }) => {
-  return (
-    <Fragment>
-      <main>
-        <StoryList stories={stories} />
-      </main>
-    </Fragment>
-  );
-};
 export default Home;

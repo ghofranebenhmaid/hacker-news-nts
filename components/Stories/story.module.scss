@@ -18,10 +18,17 @@
     &__title {
       margin-top: 1.2rem;
     }
-    &__author,
-    &__score {
+    &__score,
+    &__author {
       font-size: 0.9rem;
       color: #212121;
+    }
+    &__author {
+      &:hover {
+        color: tomato;
+        text-decoration: underline 1px;
+        text-underline-offset: 5px;
+      }
     }
   }
 }
