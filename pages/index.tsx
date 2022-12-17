@@ -26,7 +26,7 @@ const Home: NextPage<{ stories: HackerNewsStory[] }> = ({ stories }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  // Fetch the list of top stories
+  // Fetch the list of top stories'
   const res = await fetch(
     "https://hacker-news.firebaseio.com/v0/topstories.json"
   );
@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: { stories: sortedStory },
+    // revalidate: 10,
   };
 };
 
