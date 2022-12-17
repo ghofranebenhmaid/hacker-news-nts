@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import Author from "../../components/Author/Author";
-import { Auth } from "../../types";
+import Author from "./components/Author/Author";
+import { Auth } from "./types";
 
 const AuthorInfo = ({ author }: { author: Auth }) => {
   return (
